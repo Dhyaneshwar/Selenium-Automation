@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Practice Selenium Tests">
+	<listeners>
+		<listener
+			class-name="com.home.core.reports.ExtentReportGenerator" />
+		<listener
+			class-name="com.home.core.reports.TakeScreenshotListener" />
+	</listeners>
+
+	<test name="Trail Test 1">
+		<classes>
+			<class name="com.home.testcases.LoginTestCase" />
+		</classes>
+	</test>
+
+	<test name="Trail Test 2">
+		<parameter name="name" value="hey" />
+		<parameter name="pass" value="hello" />
+		<parameter name="quit" value="bye" />
+		<classes>
+			<class name="com.home.testng.testcases.TestNGMethodd" />
+			<class name="com.home.testng.testcases.ParameterExample" />
+		</classes>
+	</test>
+
+</suite>

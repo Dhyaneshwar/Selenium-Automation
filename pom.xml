@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SeleniumProject</groupId>
+  <artifactId>SeleniumProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <description>A practice selenium project as revision</description>
+	<packaging>jar</packaging>
+	<name>SeleniumProject</name>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>	
+		<!-- SELENIUM DEPENDENCY -->	
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.0.0-beta-4</version>
+		</dependency>
+
+		<!-- TESTNG DEPENDENCY -->	
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- LOG4J DEPENDENCY -->	
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<!-- EXCEL READER DEPENDENCY -->	
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>3.17</version>
+		</dependency>
+
+		<!-- EXTENT REPORT DEPENDENCY -->	
+		<dependency>
+		    <groupId>com.relevantcodes</groupId>
+    		<artifactId>extentreports</artifactId>
+    		<version>2.41.2</version>
+		</dependency>
+		
+		<!-- 
+		Have you ever thought of downloading all the driver executables automatically ???
+
+		Yes. WebDriverManager by Boni Garcia does this. Webdrivermanager helps to download 
+		binanries/executables in an automated way. It supports browsers such as Chrome, Firefox, 
+		Opera, PhantomJS, Microsoft Edge, or Internet Explorer.
+
+		We just need to add its dependency through Maven or Gradle to download all the necessary 
+		drivers. It will download ONLY if they are not present on the WebDriverManager cache 
+		(~/.m2/repository/webdriver by default). 
+		-->
+		<dependency>
+    		<groupId>io.github.bonigarcia</groupId>
+    		<artifactId>webdrivermanager</artifactId>
+    		<version>4.4.3</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>ooxml-schemas</artifactId>
+				<version>1.3</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>openxml4j</artifactId>
+				<version>1.0-beta</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.xmlbeans</groupId>
+				<artifactId>xmlbeans</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<forkCount>0</forkCount>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
