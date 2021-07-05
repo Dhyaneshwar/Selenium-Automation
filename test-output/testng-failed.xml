@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Practice Selenium Tests]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.home.core.reports.ExtentReportGenerator"/>
+    <listener class-name="com.home.core.reports.TakeScreenshotListener"/>
+  </listeners>
+  <test thread-count="5" name="Trail Test 1(failed)">
+    <classes>
+      <class name="com.home.testcases.LoginTestCase">
+        <methods>
+          <include name="checkProfileId"/>
+          <include name="gmailHomePage"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.home.testcases.LoginTestCase -->
+    </classes>
+  </test> <!-- Trail Test 1(failed) -->
+</suite> <!-- Failed suite [Practice Selenium Tests] -->
